@@ -1,18 +1,13 @@
-$color-primary : #0bab91;
-$color-secondary : #76cbb7;
-$color-dark : #1a1a1a;
-$color-research : #f1c32f;
-$color-backend : #f0469f;
-$color-design : #428dd9;
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+$color-primary : #0bab91ff;
+$color-secondary : #76cbb7ff;
+$color-dark : #1a1a1aff;
+$color-research : #f1c32fff;
+$color-research-bg : #f1c32f44;
+$color-backend : #f0469fff;
+$color-backend-bg : #f0469f44;
+$color-design : #428dd9ff;
+$color-design-bg : #428dd944;
+$color-tag : #def9f3ff;
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -21,14 +16,11 @@ $color-design : #428dd9;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {

@@ -1,0 +1,40 @@
+@import "../App.scss";
+
+.issue-card {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.title {
+  color: $color-dark;
+}
+
+.tags {
+  font-size: .7em;
+  border-radius: 50%;
+  background-color: $color-tag;
+  color: $color-dark;
+  border: .1em solid white;
+  width: 1.7em;
+  height: 1.7em;
+  font-weight: normal;
+}
+
+.tagname {
+  font-size: .7em;
+  border-radius: 2em;
+}
+
+.research {
+  background-color: $color-research-bg;
+  color: $color-research;
+}
+
+.days {
+  display: inline-block;
+  text-align: end;
+  font-size: .7em;
+  color: rgba(0, 0, 0, 0.5);
+}
