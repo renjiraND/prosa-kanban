@@ -7,7 +7,7 @@ export class Issue extends React.Component {
     super(props);
     this.state = {
       issue_id: null,
-      title: "placeholder-title",
+      title: "Improve accuracy of the voice to text model that is very cool to this date",
       asignee: null,
       start_date: '2020-01-26T13:51:50.417-07:00',
       end_date: null,
@@ -19,34 +19,46 @@ export class Issue extends React.Component {
     
   }
 
-  // A: Research, B: Backend, C: Design
+  dragStart = e => {
+    const target = e.target;
+
+    setTimeout(() => {
+      target.style.display = "none";
+    },0)
+    e.preventDefault();
+  }
+
+  dragOver = e => {
+    e.stopPropagation();
+  }
 
   render() {
     return (
-      <div className="container-fluid issue-card py-2">
-        <div className="container py-2">
+      <div className="container-fluid issue-card py-3 my-2"
+        onDragStart={this.dragStart}
+        onDragOver={this.dragOver}
+        draggable={true}>
+        <div className="container">
           <div className="row">
-            <div className="title col">
+            <div className="title col h6">
               {this.state.title}
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
-              <div className="d-inline-block">
+              <div className="col-auto">
                 <div className="text-center tags">
                   {this.state.tags.toUpperCase()}
                 </div>
               </div>
-              <div className="h-100 d-inline-block px-2">
+              <div className="px-0 col-auto">
                 <div className={"text-center tagname " + this.getTagname(this.state.tags).toLowerCase()}>
                   <div className="container">
                     {this.getTagname(this.state.tags)}
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="col-6">
+            <div className="col">
               <div className="days w-100">
                 {this.getDaysAgo(this.state.start_date)}
               </div>

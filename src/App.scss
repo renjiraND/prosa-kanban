@@ -2,7 +2,7 @@ $color-primary : #0bab91ff;
 $color-secondary : #76cbb7ff;
 $color-dark : #1a1a1aff;
 $color-research : #f1c32fff;
-$color-research-bg : #f1c32f44;
+$color-research-bg : #ffdd6f55;
 $color-backend : #f0469fff;
 $color-backend-bg : #f0469f44;
 $color-design : #428dd9ff;
@@ -34,4 +34,8 @@ $color-tag : #def9f3ff;
   to {
     transform: rotate(360deg);
   }
+}
+
+.menu-dark {
+  color: black;
 }
