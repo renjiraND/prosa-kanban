@@ -33,6 +33,16 @@
   color: $color-research;
 }
 
+.design {
+  background-color: $color-design-bg;
+  color: $color-design;
+}
+
+.backend {
+  background-color: $color-backend-bg;
+  color: $color-backend;
+}
+
 .days {
   text-align: end;
   font-size: .7em;
