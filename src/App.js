@@ -14,6 +14,54 @@ class App extends React.Component {
 
   state = taskData; 
 
+  makeid = (length) =>  {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  addTask = (data, columnId) => {
+
+    const newTaskId = this.makeid(5);
+
+    const column = this.state.columns[columnId];
+
+    const newTaskIds = Array.from(column.taskIds);
+    newTaskIds.push(newTaskId);
+
+    const newTask = {
+      id: newTaskId,
+      title: data.title,
+      tags: data.tags,
+      asignee: data.asignee,
+      start_date: data.start,
+      end_date: data.end,
+    }
+
+    const newColumn = {
+      ...column,
+      taskIds: newTaskIds
+    };
+
+    const newState = {
+      ...this.state,
+      tasks: {
+        ...this.state.tasks,
+        [newTaskId] : newTask
+      },
+      columns: {
+        ...this.state.columns,
+        [newColumn.id]: newColumn,
+      }
+    }
+    console.log(newState);
+    this.setState(newState);
+  }
+
   onDragEnd = result => {
     const { destination, source, draggableId } = result;
     
@@ -113,7 +161,7 @@ class App extends React.Component {
                 const column = this.state.columns[columnId];
                 const tasks = column.taskIds.map(taskId => this.state.tasks[taskId])
                 return (
-                  <List key={column.id} column={column} tasks={tasks} />
+                  <List key={column.id} column={column} tasks={tasks} addTaskHandler={this.addTask}/>
                 );
               })}
             </DragDropContext>
