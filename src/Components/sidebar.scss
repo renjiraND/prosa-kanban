@@ -13,23 +13,22 @@
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav .link {
   padding: 4px 8px;
   text-decoration: none;
-  font-size: 1em;
+  font-size: .8em;
   color: white;
   display: block;
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidenav .link:hover {
   color: #f1f1f1;
 }
 
 /* Style page content */
 .main {
-  margin-left: 280px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
+  padding-left: 280px; /* Same as the width of the sidebar */
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
@@ -39,13 +38,10 @@
 }
 
 .profile {
-
   font-weight: 500;
-
   .pic {
     width: 3em;
   }
-
   .role {
     color: $color-dark;
     font-size: 12px;
@@ -53,17 +49,26 @@
 }
 
 .task {
-
   .task-number {
     font-size: x-large;
   }
-
   .task-info {
-    font-size: smaller;
+    font-size: x-small;
   }
-
 }
 
 .notif-count {
-  border-radius: 50%;
+  background-color: #fff;
+  color: $color-dark;
+  font-size: smaller;
+  padding: 0 .5em 0 .5em;
+}
+
+.add-team {
+  color:white;
+  border: 0;
+  background-color: #00000000;
+  opacity: 0.7;
+  font-weight: bold;
+  font-size: small;
 }
