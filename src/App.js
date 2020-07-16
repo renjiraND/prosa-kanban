@@ -155,7 +155,7 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row px-2">
+          <div className="container d-lg-block d-xl-flex">
             <DragDropContext onDragEnd={this.onDragEnd}>
               {this.state.columnOrder.map((columnId) => {
                 const column = this.state.columns[columnId];

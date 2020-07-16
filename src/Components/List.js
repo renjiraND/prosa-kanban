@@ -8,7 +8,7 @@ export class List extends React.Component {
 
   render() {
     return (
-      <div className="col-xl-4">
+      <div className="col-xl-4 mb-2">
         <div className="card">
           <div className="card-body">
             <div className="container">
