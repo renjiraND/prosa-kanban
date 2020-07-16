@@ -20,7 +20,7 @@ export class Issue extends React.Component {
       case "design":
         return "C"
       default:
-        return "A"
+        return "D"
     }
   }
 
@@ -36,7 +36,7 @@ export class Issue extends React.Component {
             <div className="container-fluid issue-card py-3 my-2">
               <div className="container">
                 <div className="row">
-                  <div className="title col h6">
+                  <div className="col h6">
                     {this.props.task.title}
                   </div>
                 </div>

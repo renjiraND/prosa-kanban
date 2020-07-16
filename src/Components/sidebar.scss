@@ -14,7 +14,8 @@
 
 /* The navigation menu links */
 .sidenav .link {
-  padding: 4px 8px;
+  padding-top: 5pt;
+  padding-bottom: 5pt;
   text-decoration: none;
   font-size: .8em;
   font-weight: bold;
@@ -22,17 +23,10 @@
   display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav .link:hover {
-  color: #f1f1f1;
+  color: #66ffd1;
 }
 
-/* Style page content */
-.main {
-  padding-left: 280px; /* Same as the width of the sidebar */
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -73,4 +67,14 @@
   opacity: 0.7;
   font-weight: bold;
   font-size: small;
+}
+
+.search {
+  background: none;
+  border: none;
+  color: white !important;
+
+  ::placeholder{
+    color: white;
+  }
 }

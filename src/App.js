@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.scss';
 import './main.scss'
-import './Components/sidebar.scss';
 import { taskData } from './data';
 import { List } from './Components/List';
 import { Sidebar } from './Components/Sidebar';
 import { DragDropContext } from 'react-beautiful-dnd';
 import { ReactComponent as Logo } from './logo-prosa.svg';
-import { ReactComponent as Pic } from './logo.svg';
 import { KebabHorizontalIcon } from '@primer/octicons-react';
 
 class App extends React.Component {
@@ -25,6 +23,8 @@ class App extends React.Component {
   }
 
   addTask = (data, columnId) => {
+
+    console.log(columnId);
 
     const newTaskId = this.makeid(5);
 
@@ -135,20 +135,20 @@ class App extends React.Component {
         <Sidebar />
         <div className="container-fluid main">
           <div className="container-fluid title-bar mt-3">
-            <div className="row h-100 align-items-center m-0 px-4">
+            <div className="container d-flex h-100 align-items-center">
               <div className="col-auto p-0">
-                <Logo style={{maxWidth: "50px"}} />
+                <Logo style={{maxWidth: "40px"}} />
               </div>
-              <div className="col-auto h2">
+              <div className="col-auto h3">
                 Kanban Prosa
               </div>
               <button className="col-auto rounded-circle title-menu">
-                <KebabHorizontalIcon size={14} className="m-auto"/>
+                <KebabHorizontalIcon size={12} className="octicon"/>
               </button>
               <div className="col-auto col-md">
                 <div className="row justify-content-end">
-                  <Pic className="rounded-circle member img-fluid"/>
-                  <div className="col-auto rounded-pill num-members py-1 h-100">
+                  <img src="https://picsum.photos/30" alt="member" className="rounded-circle member-main mx-1"/>
+                  <div className="col-auto rounded-pill num-members py-1">
                     1 Members
                   </div>
                 </div>

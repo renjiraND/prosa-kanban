@@ -1,57 +1,62 @@
 import React from 'react';
-import './list.scss';
+import './sidebar.scss';
 import { SearchIcon, KebabHorizontalIcon, PlusIcon } from '@primer/octicons-react';
-import { ReactComponent as Pic } from '../logo.svg';
 import { teamsData } from '../data';
 
 export class Sidebar extends React.Component {
 
   teamsData = teamsData;
 
+  handleButton = (e) => {
+    console.log(e.target.id);
+  }
+
   render() {
     return (
       <div className="sidenav text-white">
         <Search />
         <Profile />
-        <div className="container my-1">
-          <div className="menu-dark p-2">
+        <div className="container px-4">
+          <div className="menu-dark">
             Menu
           </div>
-          <div className="col container">
+          <div className="col">
             <div className="row link">Home</div>
             <div className="row link">My Tasks</div>
             <div className="row link">Notifications <span className="notif-count rounded-pill">3</span> </div> 
           </div>
         </div>
 
-        <div className="container my-1">
-          <div className="menu-dark p-2">
+        <div className="container px-4">
+          <div className="menu-dark">
             Teams
           </div>
-          <div className="col container">
+          <div className="col">
             {this.teamsData.teams.map((teamId,idx) => {
               const team = this.teamsData.team[teamId]
               return (
                 <div key={idx} className="row">
-                  <div className="col-auto link">
+                  <div className="col-auto link px-0">
                     {team.name}
                   </div>
                   <div className="col">
-                    <div className="row justify-content-end">
-                      <Pic className="member rounded-circle"/>
+                    <div className="row h-100 justify-content-end align-items-center">
+                      <img src="https://picsum.photos/30" alt="profpic" className="mx-1 member rounded-circle"/>
+                      <img src="https://picsum.photos/30" alt="profpic" className="mx-1 member rounded-circle"/>
+                      <img src="https://picsum.photos/30" alt="profpic" className="mx-1 member rounded-circle"/>
                     </div>
                   </div>
                 </div>
               )
             })}
             <div className="row">
-              <button className="add-team p-2" onClick={this.handleButton}>
-                <div className="d-inline-block">
-                  <PlusIcon size={16} />
-                </div>
-                <div className="d-inline-block button-info px-1">
+              <button id="add-task-button" className="add-team py-2 px-0" onClick={this.handleButton}>
+                <span>
+                  <PlusIcon size={12} className="octicon"/>
+                </span>
+                <span className="button-info px-1 align-text-bottom">
                   Add Team
-                </div>
+                </span>
               </button>
             </div>
           </div> 
@@ -66,7 +71,7 @@ function Search() {
   return(
     <div className="container d-flex py-2">
       <span className="search p-3 col">
-        Search
+        <input type="text" className="search" placeholder="Search"/>
       </span>
       <span className="col-auto d-block m-auto">
         <SearchIcon size={20}/>

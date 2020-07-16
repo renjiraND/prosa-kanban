@@ -19,7 +19,7 @@ export class Modal extends React.Component {
 
   handleChange = (event) => {
     const value = event.target.value;
-    const formId = event.target.id;
+    const formId = event.target.name;
     this.setState({
       ...this.state,
       [formId]: value
@@ -30,29 +30,31 @@ export class Modal extends React.Component {
     return (
       <div className="col align-items-center">
         <div className="row justify-content-end">
-          <button className="add-task rounded-pill p-2" data-toggle="modal" data-target="#addTaskModal">
-            <span className="px-1">
-              <PlusIcon size={14} className="align-middle" />
+          <button className="add-task rounded-pill p-2" data-toggle="modal" data-target={"#addTaskModal-"+this.props.columnId}>
+            <span>
+              <PlusIcon size={12} className="octicon"/>
             </span>
-            Add Task
+            <span className="align-text-bottom">
+              Add Task
+            </span>
           </button>
         </div>
 
-        <div className="modal fade" id="addTaskModal" tabIndex="-1" role="dialog" aria-labelledby="addTaskModal" aria-hidden="true">
+        <div className="modal fade" id={"addTaskModal-"+this.props.columnId} tabIndex="-1" role="dialog" aria-labelledby={"addTaskModal-"+this.props.columnId} aria-hidden="true">
           <div className="modal-dialog modal-dialog-centered modal-sm" role="document">
             <div className="modal-content">
               <div className="modal-header border-0">
-                <h5 className="modal-title" id="exampleModalLongTitle">New Task</h5>
+                <h5 className="modal-title" id="taskModal">New Task</h5>
               </div>
               <div className="modal-body">
               <form>
                 <div className="form-group">
                   <label className="form-label" htmlFor="title">Title</label>
-                  <input type="text" className="form-control form-control-sm" id="title" value={this.state.title} onChange={this.handleChange}/>
+                  <input type="text" className="form-control form-control-sm" name="title" id={"title-"+this.props.columnId} value={this.state.title} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="tags">Tags</label>
-                  <select className="form-control form-control-sm" id="tags" value={this.state.tags} onChange={this.handleChange}>
+                  <label className="form-label" htmlFor="tags">Tags</label>
+                  <select className="form-control form-control-sm" name="tags" id={"tags-"+this.props.columnId} value={this.state.tags} onChange={this.handleChange}>
                     <option>Research</option>
                     <option>Backend</option>
                     <option>Design</option>
@@ -60,15 +62,15 @@ export class Modal extends React.Component {
                 </div>
                 <div className="form-group">
                   <label className="form-label" htmlFor="asignee">Asignee</label>
-                  <input type="text" className="form-control form-control-sm" id="asignee"  value={this.state.asignee} onChange={this.handleChange}/>
+                  <input type="text" className="form-control form-control-sm" name="asignee" id={"asignee-"+this.props.columnId}  value={this.state.asignee} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
                   <label className="form-label" htmlFor="start">Start Date</label>
-                  <input type="date" className="form-control form-control-sm" id="start" value={this.state.start} onChange={this.handleChange}/>
+                  <input type="date" className="form-control form-control-sm" name="start" id={"start-"+this.props.columnId} value={this.state.start} onChange={this.handleChange}/>
                 </div>
                 <div className="form-group">
                   <label className="form-label" htmlFor="end">End Date</label>
-                  <input type="date" className="form-control form-control-sm" id="end" value={this.state.end} onChange={this.handleChange}/>
+                  <input type="date" className="form-control form-control-sm" name="end" id={"end-"+this.props.columnId} value={this.state.end} onChange={this.handleChange}/>
                 </div>
                 <div className="d-flex justify-content-center">
                   <button onClick={() => {

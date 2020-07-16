@@ -3,12 +3,6 @@
 .issue-card {
   background-color: rgba(0, 0, 0, 0.04);
   border-radius: 5px;
-  font-size: 1em;
-  font-weight: 700;
-}
-
-.title {
-  color: $color-dark;
 }
 
 .tags {
@@ -24,7 +18,7 @@
 
 .tagname {
   font-size: .7em;
-  border-radius: 2em;
+  border-radius: 1em;
   height: 1.7em;
 }
 
@@ -46,5 +40,6 @@
 .days {
   text-align: end;
   font-size: .7em;
-  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.4);
 }
