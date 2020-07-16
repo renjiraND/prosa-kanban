@@ -29,10 +29,10 @@ export class Sidebar extends React.Component {
             Teams
           </div>
           <div className="col container">
-            {this.teamsData.teams.map((teamId) => {
+            {this.teamsData.teams.map((teamId,idx) => {
               const team = this.teamsData.team[teamId]
               return (
-                <div className="row">
+                <div key={idx} className="row">
                   <div className="col-auto link">
                     {team.name}
                   </div>
