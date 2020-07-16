@@ -6,7 +6,7 @@ const taskData = {
       asignee: "person-1",
       start_date: '2020-01-26T13:51:50.417-07:00',
       end_date: '2020-01-26T13:51:50.417-07:00',
-      tags: 'A', 
+      tags: 'research', 
     },
     'task-2': { 
       id: 'task-2',
@@ -14,7 +14,7 @@ const taskData = {
       asignee: "person-2",
       start_date: '2020-01-26T13:51:50.417-07:00',
       end_date: '2020-01-26T13:51:50.417-07:00',
-      tags: 'B', 
+      tags: 'backend', 
     },
     'task-3': { 
       id: 'task-3',
@@ -22,7 +22,7 @@ const taskData = {
       asignee: "person-3",
       start_date: '2020-01-26T13:51:50.417-07:00',
       end_date: '2020-01-26T13:51:50.417-07:00',
-      tags: 'C', 
+      tags: 'design', 
     },
     'task-4': { 
       id: 'task-4',
@@ -30,7 +30,7 @@ const taskData = {
       asignee: "person-4",
       start_date: '2020-01-26T13:51:50.417-07:00',
       end_date: '2020-01-26T13:51:50.417-07:00',
-      tags: 'A', 
+      tags: 'research', 
     },
     'task-5': { 
       id: 'task-5',
@@ -38,7 +38,7 @@ const taskData = {
       asignee: "person-5",
       start_date: '2020-01-26T13:51:50.417-07:00',
       end_date: '2020-01-26T13:51:50.417-07:00',
-      tags: 'C', 
+      tags: 'design', 
     }
   },
   columns: {
