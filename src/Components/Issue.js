@@ -3,11 +3,25 @@ import './issue.scss';
 import { Draggable } from 'react-beautiful-dnd';
 export class Issue extends React.Component {
 
-  constructor(props) {
-    super(props);
+  getDaysAgo = (start_date) => {
+    var created_date = new Date(start_date);
+    var today = new Date();
+    var days_passed = Math.floor((today.getTime() - created_date.getTime()) / (1000 * 3600 * 24))
+    return days_passed > 0 ? days_passed + " days ago" : "today"
+  }
 
-    this.getTagname = this.getTagname.bind(this);
-    this.getDaysAgo = this.getDaysAgo.bind(this);
+  getTagname = (tag) => {
+    tag = tag.toLowerCase(tag);
+    switch (tag) {
+      case "research":
+        return "A"
+      case "backend":
+        return "B"
+      case "design":
+        return "C"
+      default:
+        return "A"
+    }
   }
 
   render() {
@@ -29,13 +43,13 @@ export class Issue extends React.Component {
                 <div className="row">
                     <div className="col-auto">
                       <div className="text-center tags">
-                        {this.props.task.tags.toUpperCase()}
+                        {this.getTagname(this.props.task.tags)}
                       </div>
                     </div>
                     <div className="px-0 col-auto">
-                      <div className={"text-center tagname " + this.getTagname(this.props.task.tags).toLowerCase()}>
+                      <div className={"text-center tagname " + this.props.task.tags.toLowerCase()}>
                         <div className="container">
-                          {this.getTagname(this.props.task.tags)}
+                          {this.props.task.tags.toUpperCase()}
                         </div>
                       </div>
                     </div>
@@ -54,27 +68,6 @@ export class Issue extends React.Component {
         )}
       </Draggable>
     );
-  }
-
-  getDaysAgo(start_date) {
-    var created_date = new Date(start_date);
-    var today = new Date();
-    var days_passed = Math.floor((today.getTime() - created_date.getTime()) / (1000 * 3600 * 24))
-    return days_passed > 0 ? days_passed + " days ago" : "today"
-  }
-
-  getTagname(tag) {
-    tag = tag.toLowerCase(tag);
-    switch (tag) {
-      case "a":
-        return "RESEARCH"
-      case "b":
-        return "BACKEND"
-      case "c":
-        return "DESIGN"
-      default:
-        break;
-    }
   }
 
 }
