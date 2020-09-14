@@ -1,5 +1,6 @@
 # prosa-kanban
 prosa-kanban web for prosa part-time test
+Kanban Board with design from Prosa.id. This web projects is created solely for part-time test for applying front-end web development part-time role in prosa.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
